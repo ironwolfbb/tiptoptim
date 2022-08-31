@@ -1,0 +1,614 @@
+.team {
+    $root: &;
+
+    display: block;
+
+    & > :last-child {
+        margin-bottom: 0;
+    }
+
+    @at-root #{&}__heading {
+        margin-bottom: calculateRem(112px);
+
+        @include min-tablet {
+            display: flex;
+        }
+
+        @include min-desktop {
+            margin-left: calculateRem(-48px);
+            margin-right: calculateRem(-48px);
+        }
+
+        @include from-to($desktop, $tablet) {
+            margin-left: calculateRem(-24px);
+            margin-right: calculateRem(-24px);
+        }
+
+        @include desktop-medium {
+            margin-bottom: calculateRem(90px);
+        }
+
+        @include desktop {
+            margin-bottom: calculateRem(80px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(48px);
+
+            & > :last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(32px);
+        }
+    }
+
+    @at-root #{&}__desc {
+        @include min-tablet {
+            display: flex;
+        }
+
+        @include min-desktop {
+            margin-left: calculateRem(-48px);
+            margin-right: calculateRem(-48px);
+        }
+
+        @include from-to($desktop, $tablet) {
+            margin-left: calculateRem(-24px);
+            margin-right: calculateRem(-24px);
+        }
+
+        margin-bottom: calculateRem(48px);
+
+        @include tablet {
+            & > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    @at-root #{&}__col {
+        display: block;
+        width: 100%;
+
+        @at-root #{&}[data-aos-custom] {
+            transform: translateY(#{calculateRem(24px)});
+
+            @include tablet {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @include min-tablet {
+            flex: 1 0 50%;
+            max-width: 50%;
+        }
+
+        @include min-desktop {
+            padding-left: calculateRem(48px);
+            padding-right: calculateRem(48px);
+        }
+
+        @include from-to($desktop, $tablet) {
+            padding-left: calculateRem(24px);
+            padding-right: calculateRem(24px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(40px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(32px);
+        }
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @at-root #{&}__title {
+        display: block;
+        font-size: calculateRem(44px);
+        line-height: calculateRem(52px);
+        font-weight: 400;
+        margin-bottom: calculateRem(20px);
+
+        @include desktop-medium {
+            font-size: calculateRem(40px);
+            line-height: calculateRem(48px);
+            margin-bottom: calculateRem(18px);
+        }
+
+        @include tablet {
+            font-size: calculateRem(32px);
+            line-height: calculateRem(40px);
+            margin-bottom: calculateRem(16px);
+        }
+
+        @include mobile {
+            font-size: calculateRem(28px);
+            line-height: calculateRem(36px);
+        }
+    }
+
+    @at-root #{&}__text {
+        display: block;
+        font-size: calculateRem(24px);
+        line-height: calculateRem(36px);
+        font-weight: 300;
+        margin-bottom: calculateRem(24px);
+
+        @include desktop {
+            font-size: calculateRem(20px);
+            line-height: calculateRem(32px);
+        }
+
+        @include tablet {
+            font-size: calculateRem(18px);
+            line-height: calculateRem(26px);
+        }
+
+        #{$root}__desc & {
+            &:first-child {
+                &:before {
+                    display: block;
+                    width: calculateRem(124px);
+                    height: calculateRem(4px);
+                    background-color: $color-white;
+                    content: "";
+                    margin-right: auto;
+                    margin-bottom: calculateRem(40px);
+
+                    @include desktop-medium {
+                        width: calculateRem(100px);
+                        margin-bottom: calculateRem(32px);
+                    }
+
+                    @include tablet {
+                        width: calculateRem(86px);
+                        margin-bottom: calculateRem(24px);
+                    }
+
+                    @include mobile {
+                        width: calculateRem(80px);
+                        height: calculateRem(3px);
+                    }
+
+                    @include mobile-small {
+                        width: calculateRem(72px);
+                    }
+                }
+            }
+        }
+
+        #{$root}__block[data-revers] #{$root}__desc & {
+
+            @include min-tablet {
+                text-align: right;
+
+                &:first-child {
+                    &:before {
+                        content: "";
+                        margin-left: auto;
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @at-root #{&}__block {
+        display: block;
+        margin-bottom: calculateRem(112px);
+
+        @include desktop-medium {
+            margin-bottom: calculateRem(90px);
+        }
+
+        @include desktop {
+            margin-bottom: calculateRem(80px);
+        }
+
+        @include desktop-small {
+            margin-bottom: calculateRem(64px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(48px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(32px);
+        }
+    }
+
+    @at-root #{&}__group {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include min-tablet {
+            justify-content: space-between;
+        }
+
+        @include mobile {
+            justify-content: center;
+
+            &:not(:last-child) {
+                margin-bottom: calculateRem(8px);
+            }
+        }
+
+        @include mobile-small {
+            flex-direction: column;
+        }
+
+        @include from-to($tablet, $mobile-small) {
+            margin-left: calculateRem(-2px);
+            margin-right: calculateRem(-2px);
+
+            &:not(:last-child) {
+                margin-bottom: calculateRem(4px);
+            }
+        }
+
+        #{$root}__block:not([data-revers]) & {
+            @include min-desktop-large {
+                padding-right: calculateRem(140px);
+            }
+
+            @include desktop-large-only {
+                padding-right: calculateRem(80px);
+            }
+        }
+
+        #{$root}__block[data-revers] & {
+            @include min-desktop-large {
+                padding-left: calculateRem(140px);
+            }
+
+            @include desktop-large-only {
+                padding-left: calculateRem(80px);
+            }
+
+            @include min-mobile {
+                flex-direction: row-reverse;
+            }
+
+            @include mobile {
+                & > :nth-child(1) {
+                    order: 3;
+                }
+
+                & > :nth-child(2) {
+                    order: 2;
+                }
+
+                & > :nth-child(3) {
+                    order: 1;
+                }
+            }
+        }
+
+        #{$root}__group + & {
+            @include min-tablet {
+                margin-top: calculateRem(-100px);
+            }
+        }
+    }
+
+    @at-root #{&}__item {
+        display: block;
+
+        @include min-desktop-large {
+            width: calculateRem(344px);
+            height: calculateRem(432px);
+        }
+
+        @include desktop-large-only {
+            width: calculateRem(320px);
+            height: calculateRem(400px);
+        }
+
+        @include desktop-medium-only {
+            width: calculateRem(300px);
+            height: calculateRem(376px);
+        }
+
+        @include desktop-only {
+            width: calculateRem(280px);
+            height: calculateRem(352px);
+        }
+
+        @include from-to($desktop-small, $tablet) {
+            width: calculateRem(264px);
+            height: calculateRem(332px);
+        }
+
+        &:nth-child(2) {
+            @include min-desktop-large {
+                margin-top: calculateRem(112px);
+            }
+
+            @include desktop-large-only {
+                margin-top: calculateRem(100px);
+            }
+
+            @include desktop-medium-only {
+                margin-top: calculateRem(90px);
+            }
+
+            @include desktop-only {
+                margin-top: calculateRem(80px);
+            }
+
+            @include from-to($desktop-small, $tablet) {
+                margin-top: calculateRem(64px);
+            }
+        }
+
+        &:nth-child(3) {
+            @include min-desktop-large {
+                margin-top: calculateRem(224px);
+            }
+
+            @include desktop-large-only {
+                margin-top: calculateRem(200px);
+            }
+
+            @include desktop-medium-only {
+                margin-top: calculateRem(180px);
+            }
+
+            @include desktop-only {
+                margin-top: calculateRem(160px);
+            }
+
+            @include from-to($desktop-small, $tablet) {
+                margin-top: calculateRem(128px);
+            }
+        }
+
+        @include tablet {
+            position: relative;
+            width: 100%;
+        }
+
+        @include from-to($tablet, $mobile-small) {
+            padding-left: calculateRem(2px);
+            padding-right: calculateRem(2px);
+        }
+
+        @include mobile-small {
+            &:not(:last-child) {
+                margin-bottom: calculateRem(8px);
+            }
+        }
+
+        @include from-to($tablet, $mobile) {
+            flex: 1 0 33.3333%;
+            max-width: 33.3333%;
+        }
+
+        @include mobile-only {
+            flex: 1 0 50%;
+            max-width: 50%;
+        }
+
+        @include mobile-only {
+            #{$root}__block:not([data-revers]) & {
+                &:last-child {
+                    margin-top: calculateRem(4px);
+                }
+            }
+
+            #{$root}__block[data-revers] & {
+                &:first-child {
+                    margin-top: calculateRem(4px);
+                }
+            }
+        }
+    }
+
+    @at-root #{&}__person {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &:after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            content: "";
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.64) 100%);
+        }
+
+        @at-root #{&}[data-aos-custom] {
+            transform: translateY(#{calculateRem(64px)});
+
+            @include tablet {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        @include desktop-medium {
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+        }
+
+        @include tablet {
+            padding-bottom: 126%;
+        }
+    }
+
+    @at-root #{&}__photo {
+        @include backgroundImage;
+
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        #{$root}__block[data-revers] & {
+            transform: scaleX(-1);
+        }
+    }
+
+    @at-root #{&}__info {
+        @include min-desktop-medium {
+            position: absolute;
+            bottom: 0;
+            z-index: 1;
+            padding-bottom: calculateRem(44px);
+        }
+
+        @include desktop-medium {
+            position: relative;
+            z-index: 1;
+        }
+
+        @include tablet {
+            position: absolute;
+            padding: calculateRem(16px);
+            margin-left: auto;
+            bottom: 0;
+        }
+
+        #{$root}__block:not([data-revers]) & {
+            @include min-tablet {
+                margin-left: auto;
+            }
+
+            @include min-desktop-medium {
+                right: -50%;
+            }
+
+            @include min-desktop-large {
+                transform: translateX(-25%);
+            }
+
+            @include desktop-large-only {
+                transform: translateX(-45%);
+            }
+
+            @include desktop-medium-only {
+                padding-right: calculateRem(32px);
+                padding-bottom: calculateRem(32px);
+            }
+
+            @include from-to($desktop, $tablet) {
+                padding-right: calculateRem(24px);
+                padding-bottom: calculateRem(24px);
+            }
+        }
+
+        #{$root}__block[data-revers] & {
+
+            @include min-tablet {
+                margin-right: auto;
+            }
+
+            @include min-desktop-medium {
+                left: -50%;
+            }
+
+            @include min-desktop-large {
+                transform: translateX(25%);
+            }
+
+            @include desktop-large-only {
+                transform: translateX(45%);
+            }
+
+            @include desktop-medium-only {
+                padding-left: calculateRem(32px);
+                padding-bottom: calculateRem(32px);
+            }
+
+            @include from-to($desktop, $tablet) {
+                padding-left: calculateRem(24px);
+                padding-bottom: calculateRem(24px);
+            }
+        }
+    }
+
+    @at-root #{&}__name {
+        display: block;
+        font-size: calculateRem(28px);
+        line-height: calculateRem(36px);
+        font-weight: 900;
+        margin-bottom: calculateRem(2px);
+
+        @include desktop-medium {
+            font-size: calculateRem(24px);
+            line-height: calculateRem(32px);
+        }
+
+        @include desktop {
+            font-size: calculateRem(20px);
+            line-height: calculateRem(28px);
+        }
+
+        @include tablet {
+            font-size: calculateRem(18px);
+            line-height: calculateRem(26px);
+        }
+
+        @include tablet-small {
+            font-size: calculateRem(16px);
+            line-height: calculateRem(24px);
+        }
+
+        @include mobile-small {
+            font-size: calculateRem(20px);
+            line-height: calculateRem(28px);
+        }
+    }
+
+    @at-root #{&}__state {
+        display: block;
+        font-size: calculateRem(18px);
+        line-height: calculateRem(26px);
+        color: rgba($color-white, 0.7);
+
+        @include desktop-medium {
+            font-size: calculateRem(16px);
+            line-height: calculateRem(24px);
+        }
+
+        @include desktop {
+            font-size: calculateRem(15px);
+            line-height: calculateRem(23px);
+        }
+
+        @include tablet {
+            font-size: calculateRem(14px);
+            line-height: calculateRem(22px);
+        }
+
+        @include tablet-small {
+            font-size: calculateRem(13px);
+            line-height: calculateRem(21px);
+        }
+
+        @include mobile-small {
+            font-size: calculateRem(16px);
+            line-height: calculateRem(24px);
+        }
+    }
+}
+

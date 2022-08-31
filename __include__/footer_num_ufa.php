@@ -1,0 +1,1 @@
+<a href="tel:+73472588302" class="contacts__link">+7 (347) 25-88-302

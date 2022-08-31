@@ -1,0 +1,12 @@
+.main {
+
+    @at-root .page-main & {
+        @include min-tablet {
+            display: flex;
+        }
+    }
+
+    @at-root .page-contacts & {
+        display: flex;
+    }
+}

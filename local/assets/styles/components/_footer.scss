@@ -1,0 +1,39 @@
+.footer {
+    position: relative;
+    display: block;
+    padding-bottom: calculateRem(32px);
+    z-index: 2;
+
+    @include desktop {
+        padding-bottom: calculateRem(28px);
+    }
+
+    @include tablet {
+        padding-bottom: calculateRem(24px);
+    }
+
+    @at-root #{&}__inner {
+        @include container;
+
+        @include min-tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    @at-root #{&}__contacts {
+        display: block;
+
+        @include min-tablet {
+            margin-right: calculateRem(40px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(24px);
+        }
+    }
+
+    @at-root #{&}__social {
+        display: block;
+    }
+}

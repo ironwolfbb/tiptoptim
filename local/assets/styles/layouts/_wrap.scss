@@ -1,0 +1,106 @@
+.wrap {
+    display: block;
+    padding-top: calculateRem(90px);
+    padding-bottom: calculateRem(90px);
+    overflow: hidden;
+
+    @include desktop {
+        padding-top: calculateRem(72px);
+        padding-bottom: calculateRem(72px);
+    }
+
+    @include desktop-small {
+        padding-top: calculateRem(64px);
+        padding-bottom: calculateRem(64px);
+    }
+
+    @include tablet {
+        padding-top: calculateRem(56px);
+        padding-bottom: calculateRem(56px);
+    }
+
+    @include tablet-small {
+        padding-top: calculateRem(48px);
+        padding-bottom: calculateRem(48px);
+    }
+
+    @include mobile {
+        padding-top: calculateRem(40px);
+        padding-bottom: calculateRem(40px);
+    }
+
+    @at-root #{&}__inner {
+        @include container;
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @at-root #{&}__heading {
+        display: block;
+        margin-bottom: calculateRem(64px);
+
+        @include desktop {
+            margin-bottom: calculateRem(48px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(40px);
+        }
+
+        @include tablet-small {
+            margin-bottom: calculateRem(32px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(24px);
+        }
+
+        @include mobile-small {
+            margin-bottom: calculateRem(20px);
+        }
+    }
+
+    @at-root #{&}__content {
+        display: block;
+    }
+
+    @at-root #{&}__block {
+        display: block;
+        margin-bottom: calculateRem(112px);
+
+        @include desktop-medium {
+            margin-bottom: calculateRem(90px);
+        }
+
+        @include desktop {
+            margin-bottom: calculateRem(80px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(64px);
+        }
+
+        @include tablet-small {
+            margin-bottom: calculateRem(48px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(40px);
+        }
+    }
+
+    @at-root #{&}__tabs {
+        display: block;
+        margin-bottom: calculateRem(40px);
+
+        @include tablet {
+            margin-bottom: calculateRem(32px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(28px);
+        }
+    }
+}

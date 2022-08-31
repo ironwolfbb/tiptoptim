@@ -1,0 +1,97 @@
+.contacts {
+    display: block;
+    font-size: 0;
+    line-height: 1;
+
+    @include desktop-medium {
+        @at-root .feedback & {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+
+    @include tablet {
+        @at-root .footer & {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+    }
+
+    @at-root #{&}__link {
+        @include transition-color;
+
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: calculateRem(16px);
+        line-height: calculateRem(24px);
+        color: $color-white;
+        fill: $color-white;
+        padding-left: calculateRem(28px);
+
+        @at-root .footer & {
+            @include min-tablet {
+                margin-right: calculateRem(40px);
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            @include tablet {
+                margin-bottom: calculateRem(16px);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        @at-root .feedback & {
+            @include min-desktop-medium {
+                margin-right: calculateRem(40px);
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            @include desktop-medium {
+                margin-bottom: calculateRem(16px);
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        &:hover {
+            color: rgba($color-white, 0.9);
+            fill: rgba($color-white, 0.9);
+        }
+
+        &:after {
+            position: absolute;
+            display: block;
+            width: calc(100% - #{calculateRem(28px)});
+            left: calculateRem(28px);
+            bottom: calculateRem(-3px);
+            content: "";
+            border: 1px dashed rgba($color-white, 0.64);
+        }
+
+        svg {
+            position: absolute;
+            display: block;
+            width: calculateRem(18px);
+            height: calculateRem(18px);
+            left: 0;
+            top: calculateRem(2px);
+            transition: fill 0.2s ease-out;
+        }
+    }
+}

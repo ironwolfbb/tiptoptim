@@ -1,0 +1,92 @@
+.tabs {
+    display: block;
+    font-size: 0;
+    line-height: 1;
+
+    & > :last-child {
+        margin-right: 0;
+    }
+
+    @at-root #{&}__slide {
+        display: block;
+        width: auto;
+
+        @include min-tablet {
+            margin-right: calculateRem(40px);
+        }
+
+        @include tablet {
+            margin-right: calculateRem(24px);
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    @at-root #{&}__button {
+        @include transition-color;
+
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: calculateRem(20px);
+        color: rgba($color-white, 0.64);
+        padding: 0;
+        border: 0;
+        background-color: transparent;
+        cursor: pointer;
+
+        @include min-tablet {
+            line-height: calculateRem(50px);
+
+            &:before,
+            &:after {
+                content: "";
+            }
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            display: block;
+            height: calculateRem(4px);
+            left: 0;
+            bottom: 0;
+        }
+
+        &:before {
+            width: 100%;
+            background-color: rgba($color-white, 0.32);
+        }
+
+        &:after {
+            background-color: $color-white;
+            width: 0;
+            transition: width 0.28s ease-out;
+        }
+
+        &:focus {
+            color: $color-white;
+            outline: none;
+        }
+
+        &:hover {
+            color: $color-white;
+
+            &:after {
+                width: 100%;
+            }
+        }
+
+        @at-root #{&}--active {
+            color: $color-white;
+            pointer-events: none;
+            cursor: default;
+
+            &:after {
+                width: 100%;
+            }
+        }
+    }
+}

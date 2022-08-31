@@ -1,0 +1,76 @@
+.header {
+    position: relative;
+    display: block;
+    padding-top: calculateRem(32px);
+    z-index: 11;
+
+    @include tablet {
+        padding-top: calculateRem(28px);
+    }
+
+    @include mobile {
+        padding-top: calculateRem(24px);
+    }
+
+    @at-root #{&}__inner {
+        @include container;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    @at-root #{&}__logo {
+        display: block;
+        width: calculateRem(298px);
+        height: calculateRem(58px);
+        background: url('../../images/icons/icon-logo.svg') no-repeat center center;
+        background-size: cover;
+        flex-shrink: 0;
+
+        @include desktop {
+            width: calculateRem(280px);
+            height: calculateRem(54px);
+        }
+
+        @include desktop-extra-small {
+            width: calculateRem(254px);
+            height: calculateRem(48px);
+        }
+
+        @include mobile  {
+            width: calculateRem(174px);
+            height: calculateRem(34px);
+        }
+    }
+
+    @at-root #{&}__items {
+        display: flex;
+        align-items: center;
+        font-size: 0;
+        line-height: 1;
+
+        @include min-desktop {
+            & > :not(:last-child) {
+                margin-right: calculateRem(30px);
+            }
+        }
+
+        @include desktop {
+            & > :not(:last-child) {
+                margin-right: calculateRem(16px);
+            }
+        }
+    }
+
+    @at-root #{&}__button {
+        @include desktop {
+            height: calculateRem(44px);
+            line-height: calculateRem(40px);
+        }
+
+        @include tablet-small {
+            display: none;
+        }
+    }
+}

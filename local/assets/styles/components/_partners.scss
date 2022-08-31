@@ -1,0 +1,174 @@
+.partners {
+    display: block;
+
+    @at-root #{&}__inner {
+        display: block;
+
+        & > :last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @at-root #{&}__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: calculateRem(64px);
+
+        @include desktop {
+            margin-bottom: calculateRem(56px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(40px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(32px);
+        }
+    }
+
+    @at-root #{&}__plank {
+        display: block;
+        padding: calculateRem(64px) calculateRem(160px) calculateRem(64px) calculateRem(32px);
+        width: calculateRem(560px);
+        flex-shrink: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 20.99%, rgba(0, 0, 0, 0) 100%);
+
+        @include desktop {
+            width: calculateRem(540px);
+            padding: calculateRem(56px) calculateRem(180px) calculateRem(56px) calculateRem(28px);
+        }
+
+        @include tablet {
+            width: 100%;
+            padding: calculateRem(24px);
+        }
+
+        @include tablet-small {
+            padding: calculateRem(20px);
+        }
+
+        @include mobile {
+            padding: calculateRem(16px);
+        }
+
+        @at-root #{&}[data-aos-custom] {
+            transform: translateX(#{calculateRem(-48px)});
+
+            @include tablet {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+
+    @at-root #{&}__info {
+        display: block;
+        max-width: 60%;
+        width: 100%;
+        padding-top: calculateRem(64px);
+        margin-left: calculateRem(-132px);
+        font-weight: 300;
+
+        @include desktop {
+            padding-top: calculateRem(56px);
+            margin-left: calculateRem(-148px);
+        }
+
+        @include tablet {
+            display: none;
+        }
+
+        @at-root #{&}[data-aos-custom] {
+            transform: translateX(#{calculateRem(80px)});
+
+            @include tablet {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+
+    @at-root #{&}__text {
+        display: block;
+        font-size: calculateRem(24px);
+        line-height: calculateRem(36px);
+        margin-bottom: calculateRem(24px);
+
+        @include desktop-medium {
+            font-size: calculateRem(22px);
+            line-height: calculateRem(32px);
+        }
+
+        @include desktop {
+            font-size: calculateRem(20px);
+            line-height: calculateRem(30px);
+            margin-bottom: calculateRem(20px);
+        }
+    }
+
+    @at-root #{&}__caption {
+        display: block;
+        font-size: calculateRem(18px);
+        line-height: calculateRem(28px);
+        color: rgba($color-white, 0.7);
+
+        @include desktop {
+            font-size: calculateRem(16px);
+            line-height: calculateRem(26px);
+        }
+    }
+
+    @at-root #{&}__logo {
+        display: block;
+        height: calculateRem(48px);
+        fill: $color-white;
+        margin-bottom: calculateRem(80px);
+
+        @include tablet {
+            height: calculateRem(40px);
+            margin-bottom: calculateRem(64px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(48px);
+        }
+
+        svg {
+            display: block;
+            height: 100%;
+            max-width: calculateRem(240px);
+
+            @include tablet {
+                max-width: calculateRem(200px);
+            }
+        }
+    }
+
+    @at-root #{&}__thanks {
+        display: block;
+        font-size: calculateRem(16px);
+        line-height: calculateRem(24px);
+        margin-bottom: calculateRem(4px);
+    }
+
+    @at-root #{&}__show {
+        @include transition-color;
+
+        display: inline-block;
+        border: 0;
+        padding: 0;
+        background-color: transparent;
+        color: rgba($color-white, 0.64);
+        cursor: pointer;
+
+        &:focus {
+            color: $color-white;
+            outline: none;
+        }
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+}

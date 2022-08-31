@@ -1,0 +1,38 @@
+.textarea {
+    display: inline-block;
+    width: 100%;
+    height: calculateRem(100px);
+    padding: calculateRem(14px) calculateRem(12px);
+    font-size: calculateRem(20px);
+    line-height: calculateRem(28px);
+    font-weight: 500;
+    background-color: transparent;
+    color: rgba($color-white, 0.64);
+    border: 1px solid rgba($color-white, 0.5);
+    transition: color 0.2s ease-out, border-color 0.2s ease-out;
+    resize: none;
+
+    @include tablet {
+        padding: calculateRem(12px) calculateRem(10px);
+        font-size: calculateRem(16px);
+        line-height: calculateRem(24px);
+    }
+
+    &::placeholder {
+        color: rgba($color-black, 0.64);
+    }
+
+    &:focus,
+    &:hover {
+        color: $color-white;
+    }
+
+    &:focus {
+        border-color: $color-white;
+        outline: none;
+    }
+
+    &:invalid {
+        box-shadow: none; // firefox
+    }
+}

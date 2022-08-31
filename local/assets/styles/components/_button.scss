@@ -1,0 +1,42 @@
+.button {
+    display: inline-block;
+    height: calculateRem(52px);
+    padding: 0 calculateRem(28px);
+    font-size: 0;
+    line-height: calculateRem(48px);
+    border: 2px solid rgba($color-white, 0.3);
+    color: $color-white;
+    background-color: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    transition: border-color 0.2s ease-out;
+
+    @include mobile {
+        height: calculateRem(44px);
+        line-height: calculateRem(40px);
+        padding: 0 calculateRem(24px);
+    }
+
+    &:focus {
+        outline: none;
+        border-color: rgba($color-white, 0.6);
+    }
+
+    &:hover {
+        border-color: rgba($color-white, 0.6);
+    }
+
+    @at-root #{&}__text {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        font-size: calculateRem(12px);
+        font-weight: 500;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}

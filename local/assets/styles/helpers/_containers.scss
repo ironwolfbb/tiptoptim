@@ -1,0 +1,27 @@
+// Container
+$container-max: 2560px;
+$container: 1920px;
+$container-desktop: 1024px;
+$container-desktop-small: 932px;
+$container-desktop--extra-small: 860px;
+$container-tablet: 720px;
+$container-tablet-small: 540px;
+$gutter-width: 16px; // 32px (16px on each side of a container)
+
+@mixin container {
+    max-width: $container;
+    width: 100%;
+    padding-left: 5.85%; // 112px
+    padding-right: 5.85%; // 112px
+
+    @include mobile {
+        max-width: none;
+        padding-left: $gutter-width;
+        padding-right: $gutter-width;
+    }
+
+    @include min-mobile {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

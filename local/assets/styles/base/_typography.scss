@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $font-roboto;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    display: block;
+    margin: 0;
+    font-weight: 900;
+}
+
+h1,
+.h1 {
+    font-size: calculateRem(64px);
+    line-height: calculateRem(72px);
+
+    @include desktop {
+        font-size: calculateRem(56px);
+        line-height: calculateRem(64px);
+    }
+
+    @include desktop-small {
+        font-size: calculateRem(48px);
+        line-height: calculateRem(56px);
+    }
+
+    @include tablet {
+        font-size: calculateRem(40px);
+        line-height: calculateRem(48px);
+    }
+
+    @include tablet-small {
+        font-size: calculateRem(32px);
+        line-height: calculateRem(40px);
+    }
+
+    @include mobile {
+        font-size: calculateRem(28px);
+        line-height: calculateRem(36px);
+    }
+}
+
+h2,
+.h2 {
+    font-size: calculateRem(56px);
+    line-height: calculateRem(64px);
+
+    @include desktop {
+        font-size: calculateRem(48px);
+        line-height: calculateRem(56px);
+    }
+
+    @include desktop-small {
+        font-size: calculateRem(40px);
+        line-height: calculateRem(48px);
+    }
+
+    @include tablet {
+        font-size: calculateRem(32px);
+        line-height: calculateRem(40px);
+    }
+
+    @include tablet-small {
+        font-size: calculateRem(28px);
+        line-height: calculateRem(36px);
+    }
+
+    @include mobile {
+        font-size: calculateRem(24px);
+        line-height: calculateRem(32px);
+    }
+}
+
+h3,
+.h3 {
+    font-size: calculateRem(48px);
+    line-height: calculateRem(56px);
+
+    @include desktop {
+        font-size: calculateRem(40px);
+        line-height: calculateRem(48px);
+    }
+
+    @include desktop-small {
+        font-size: calculateRem(32px);
+        line-height: calculateRem(40px);
+    }
+
+    @include tablet {
+        font-size: calculateRem(28px);
+        line-height: calculateRem(36px);
+    }
+
+    @include tablet-small {
+        font-size: calculateRem(24px);
+        line-height: calculateRem(32px);
+    }
+
+    @include mobile {
+        font-size: calculateRem(20px);
+        line-height: calculateRem(28px);
+    }
+}
+
+h4,
+.h4 {
+    font-size: calculateRem(40px);
+    line-height: calculateRem(48px);
+
+    @include desktop {
+        font-size: calculateRem(32px);
+        line-height: calculateRem(40px);
+    }
+
+    @include desktop-small {
+        font-size: calculateRem(28px);
+        line-height: calculateRem(36px);
+    }
+
+    @include tablet {
+        font-size: calculateRem(24px);
+        line-height: calculateRem(32px);
+    }
+
+    @include tablet-small {
+        font-size: calculateRem(20px);
+        line-height: calculateRem(28px);
+    }
+
+    @include mobile {
+        font-size: calculateRem(18px);
+        line-height: calculateRem(26px);
+    }
+}
+
+h5,
+.h5 {
+    font-size: calculateRem(32px);
+    line-height: calculateRem(40px);
+
+    @include desktop {
+        font-size: calculateRem(28px);
+        line-height: calculateRem(36px);
+    }
+
+    @include desktop-small {
+        font-size: calculateRem(24px);
+        line-height: calculateRem(32px);
+    }
+
+    @include tablet {
+        font-size: calculateRem(20px);
+        line-height: calculateRem(28px);
+    }
+
+    @include tablet-small {
+        font-size: calculateRem(18px);
+        line-height: calculateRem(26px);
+    }
+}
+
+h6,
+.h6 {
+    font-size: calculateRem(28px);
+    line-height: calculateRem(36px);
+
+    @include desktop {
+        font-size: calculateRem(24px);
+        line-height: calculateRem(32px);
+    }
+
+    @include desktop-small {
+        font-size: calculateRem(20px);
+        line-height: calculateRem(28px);
+    }
+
+    @include tablet {
+        font-size: calculateRem(18px);
+        line-height: calculateRem(26px);
+    }
+
+    @include mobile {
+        font-size: calculateRem(16px);
+        line-height: calculateRem(24px);
+    }
+}
+
+p {
+    margin: 0;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}

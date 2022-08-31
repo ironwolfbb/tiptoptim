@@ -1,0 +1,178 @@
+.stages {
+    display: block;
+
+    @at-root #{&}__inner {
+        counter-reset: number;
+
+        @include min-tablet-small {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        @include min-desktop-extra-small {
+            margin-left: calculateRem(-16px);
+            margin-right: calculateRem(-16px);
+        }
+
+        @include from-to($desktop-extra-small, $tablet-small) {
+            margin-left: calculateRem(-12px);
+            margin-right: calculateRem(-12px);
+        }
+
+        @include tablet-small {
+            display: none;
+        }
+    }
+
+    @at-root #{&}__item {
+        display: block;
+        width: 100%;
+
+        @include min-desktop-extra-small {
+            flex: 1 0 25%;
+            max-width: 25%;
+            margin-bottom: calculateRem(32px);
+            padding-left: calculateRem(16px);
+            padding-right: calculateRem(16px);
+
+            @include last-row(4) {
+                margin-bottom: 0;
+            }
+        }
+
+        @include from-to($desktop-extra-small, $tablet-small) {
+            flex: 1 0 33.3333%;
+            max-width: 33.3333%;
+            padding-left: calculateRem(12px);
+            padding-right: calculateRem(12px);
+            margin-bottom: calculateRem(24px);
+        }
+
+        @at-root #{&}[data-aos-custom] {
+            transform: translateY(#{calculateRem(16px)});
+
+            @include tablet {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    }
+
+    @at-root #{&}__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba($color-white, 0.05);
+        padding: calculateRem(24px) calculateRem(40px) calculateRem(40px);
+        counter-increment: number;
+
+        &:before {
+            display: block;
+            font-size: calculateRem(60px);
+            line-height: 1;
+            color: rgba($color-white, 0.16);
+            font-weight: 700;
+            margin-left: calculateRem(-56px);
+            margin-bottom: calculateRem(40px);
+            content: counter(number, decimal-leading-zero);
+
+            @include desktop-medium {
+                margin-left: calculateRem(-48px);
+            }
+
+            @include desktop {
+                margin-left: calculateRem(-40px);
+            }
+
+            @include tablet-small {
+                margin-left: 0;
+            }
+        }
+
+        @include desktop-medium {
+            padding: calculateRem(20px) calculateRem(32px) calculateRem(32px);
+        }
+
+        @include desktop {
+            padding: calculateRem(20px) calculateRem(24px) calculateRem(24px);
+        }
+    }
+
+    @at-root #{&}__info {
+        display: flex;
+        width: 100%;
+    }
+
+    @at-root #{&}__caption {
+        display: block;
+        font-size: calculateRem(24px);
+        line-height: calculateRem(32px);
+
+        @include desktop-medium {
+            font-size: calculateRem(20px);
+            line-height: calculateRem(28px);
+        }
+
+        @include desktop {
+            font-size: calculateRem(18px);
+            line-height: calculateRem(26px);
+        }
+    }
+
+    @at-root #{&}__link {
+        @include transition-color;
+
+        color: rgba($color-white, 0.5);
+        text-decoration: underline;
+
+        &:hover {
+            color: rgba($color-white, 0.8);
+        }
+    }
+
+    @at-root #{&}__slider {
+        counter-reset: number;
+        overflow: hidden;
+
+        @include min-tablet-small {
+            display: none;
+        }
+
+        @include tablet-small {
+            display: block;
+        }
+
+        @at-root #{&} .swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+            left: auto;
+            transform: none;
+        }
+    }
+
+    @at-root #{&}__slide {
+        padding-left: calculateRem(8px);
+        padding-right: calculateRem(8px);
+        height: auto;
+    }
+
+    @at-root #{&}__pagination {
+        @include push--auto;
+
+        display: block;
+        font-size: 0;
+        line-height: 1;
+        width: 100%;
+        text-align: center;
+        padding-top: calculateRem(16px);
+    }
+
+    @at-root #{&} .swiper-pagination-bullet {
+        background-color: $color-white;
+    }
+}
+
+

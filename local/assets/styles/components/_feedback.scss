@@ -1,0 +1,102 @@
+.feedback {
+    width: 100%;
+    padding-top: calculateRem(80px);
+    padding-bottom: calculateRem(80px);
+
+    @include min-tablet {
+        display: flex;
+        align-items: center;
+    }
+
+    @include desktop {
+        padding-top: calculateRem(72px);
+        padding-bottom: calculateRem(72px);
+    }
+
+    @include tablet {
+        padding-top: calculateRem(56px);
+        padding-bottom: calculateRem(32px);
+    }
+
+    @include mobile {
+        padding-top: calculateRem(48px);
+        padding-bottom: calculateRem(24px);
+    }
+
+    @at-root #{&}__inner {
+        @include container;
+
+        @include min-tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    @at-root #{&}__info {
+        display: block;
+        width: 100%;
+
+        @include min-tablet {
+            flex: 1 1 55%;
+            max-width: 55%;
+            padding-right: calculateRem(56px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(40px);
+        }
+    }
+
+    @at-root #{&}__heading {
+        display: block;
+        margin-bottom: calculateRem(48px);
+
+        @include desktop {
+            margin-bottom: calculateRem(40px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(32px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(24px);
+        }
+    }
+
+    @at-root #{&}__contacts {
+        display: block;
+        margin-bottom: calculateRem(48px);
+
+        @include desktop {
+            margin-bottom: calculateRem(40px);
+        }
+
+        @include tablet {
+            margin-bottom: calculateRem(32px);
+        }
+
+        @include mobile {
+            margin-bottom: calculateRem(24px);
+        }
+    }
+
+    @at-root #{&}__social {
+        display: block;
+    }
+
+    @at-root #{&}__form {
+        display: block;
+        width: 100%;
+
+        @include min-desktop-small {
+            flex: 1 0 calculateRem(400px);
+            max-width: calculateRem(400px);
+        }
+
+        @include from-to($desktop-small, $tablet) {
+            flex: 1 0 calculateRem(360px);
+            max-width: calculateRem(360px);
+        }
+    }
+}

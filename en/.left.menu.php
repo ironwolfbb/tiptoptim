@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Studio", 
+		"/en/team/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Portfolio", 
+		"/en/portfolio/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Clients", 
+		"/en/clients/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Team", 
+		"/en/staff/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Contact", 
+		"/en/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

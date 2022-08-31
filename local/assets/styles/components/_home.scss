@@ -1,0 +1,142 @@
+.home {
+    position: relative;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    color: $color-white;
+    width: 100%;
+    padding-top: calculateRem(80px);
+    padding-bottom: calculateRem(80px);
+
+    @include desktop {
+        padding-top: calculateRem(72px);
+        padding-bottom: calculateRem(72px);
+    }
+
+    @include tablet {
+        padding-top: calculateRem(56px);
+        padding-bottom: calculateRem(32px);
+    }
+
+    @include mobile {
+        padding-top: calculateRem(48px);
+        padding-bottom: calculateRem(24px);
+    }
+
+    @at-root #{&}__inner {
+        @include container;
+    }
+
+    @at-root #{&}__caption {
+        position: relative;
+        display: block;
+        padding-left: calculateRem(144px);
+        font-size: calculateRem(18px);
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: calculateRem(8px);
+
+        @include desktop {
+            padding-left: calculateRem(132px);
+        }
+
+        @include tablet {
+            font-size: calculateRem(16px);
+            padding-left: calculateRem(112px);
+        }
+
+        @include mobile {
+            font-size: calculateRem(14px);
+            padding-left: calculateRem(98px);
+        }
+
+        @include mobile-small {
+            font-size: calculateRem(12px);
+            padding-left: calculateRem(90px);
+        }
+
+        &:before {
+            position: absolute;
+            display: block;
+            width: calculateRem(112px);
+            height: calculateRem(4px);
+            left: 0;
+            top: calculateRem(8px);
+            background-color: $color-white;
+            content: "";
+
+            @include desktop {
+                top: calculateRem(7px);
+                width: calculateRem(100px);
+            }
+
+            @include tablet {
+                top: calculateRem(6px);
+                width: calculateRem(86px);
+            }
+
+            @include mobile {
+                top: calculateRem(5px);
+                width: calculateRem(80px);
+                height: calculateRem(3px);
+            }
+
+            @include mobile-small {
+                top: calculateRem(4px);
+                width: calculateRem(72px);
+            }
+        }
+    }
+
+    @at-root #{&}__title {
+        font-size: calculateRem(146px);
+        line-height: 1;
+        text-transform: uppercase;
+        font-weight: 900;
+        margin-bottom: calculateRem(48px);
+
+        @at-root #{&} span {
+            display: block;
+        }
+
+        @include desktop-large {
+            font-size: calculateRem(120px);
+        }
+
+        @include desktop {
+            font-size: calculateRem(112px);
+            margin-bottom: calculateRem(40px);
+        }
+
+        @include desktop-small {
+            font-size: calculateRem(98px);
+        }
+
+        @include desktop-extra-small {
+            font-size: calculateRem(86px);
+        }
+
+        @include tablet {
+            font-size: calculateRem(72px);
+            margin-bottom: calculateRem(32px);
+        }
+
+        @include tablet-small {
+            font-size: calculateRem(64px);
+        }
+
+        @include mobile {
+            font-size: calculateRem(56px);
+            margin-bottom: calculateRem(24px);
+        }
+
+        @include mobile-small {
+            margin-bottom: calculateRem(20px);
+        }
+    }
+
+    @at-root #{&}__button {
+
+    }
+}

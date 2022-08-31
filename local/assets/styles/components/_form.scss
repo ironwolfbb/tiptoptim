@@ -1,0 +1,80 @@
+.form {
+    $root: &;
+
+    display: block;
+
+    @at-root #{&}__item {
+        position: relative;
+        display: block;
+        margin-bottom: calculateRem(32px);
+    }
+
+    @at-root #{&}__field {
+        position: relative;
+        z-index: 1;
+        background-color: transparent;
+    }
+
+    @at-root #{&}__label {
+        position: absolute;
+        display: block;
+        font-size: calculateRem(20px);
+        line-height: 1;
+        top: calculateRem(17px);
+        left: 0;
+        color: rgba($color-white, 0.64);
+        transition: font-size 0.2s ease-out, top 0.2s ease-out;
+
+        @include tablet {
+            top: calculateRem(19px);
+            font-size: calculateRem(16px);
+        }
+
+        #{$root}__item--active & {
+            font-size: calculateRem(12px);
+            text-transform: uppercase;
+            top: calculateRem(-4px);
+        }
+    }
+
+    @at-root #{&}__caption {
+        display: block;
+        font-size: calculateRem(20px);
+        line-height: 1;
+        color: rgba($color-white, 0.64px);
+        margin-bottom: calculateRem(10px);
+
+        @include tablet {
+            font-size: calculateRem(16px);
+        }
+    }
+
+    @at-root #{&}__submit {
+        display: block;
+        font-size: 0;
+        line-height: 1;
+        margin-top: calculateRem(40px);
+        margin-bottom: calculateRem(24px);
+
+        @at-root #{&} .button {
+            width: 100%;
+        }
+    }
+
+    @at-root #{&}__agreement {
+        display: block;
+        font-size: calculateRem(13px);
+        line-height: calculateRem(20px);
+        color: rgba($color-white, 0.64);
+    }
+
+    @at-root #{&}__link {
+        @include transition-color;
+
+        color: rgba($color-white, 0.9);
+
+        &:hover {
+            color: $color-white;
+        }
+    }
+}

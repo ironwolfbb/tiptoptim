@@ -1,0 +1,36 @@
+.input {
+    display: inline-block;
+    width: 100%;
+    height: calculateRem(54px);
+    padding: 0;
+    font-size: calculateRem(20px);
+    line-height: 1;
+    font-weight: 500;
+    background-color: transparent;
+    color: rgba($color-white, 0.64);
+    border: solid rgba($color-white, 0.5);
+    border-width: 0 0 1px 0;
+    transition: color 0.2s ease-out, border-color 0.2s ease-out;
+
+    @include tablet {
+        font-size: calculateRem(16px);
+    }
+
+    &::placeholder {
+        color: rgba($color-black, 0.64);
+    }
+
+    &:focus,
+    &:hover {
+        color: $color-white;
+    }
+
+    &:focus {
+        border-color: $color-white;
+        outline: none;
+    }
+
+    &:invalid {
+        box-shadow: none; // firefox
+    }
+}
