@@ -1,4 +1,4 @@
-<?
+<?php
 $aMenuLinks = Array(
 	Array(
 		"Студия", 
@@ -7,6 +7,13 @@ $aMenuLinks = Array(
 		Array(), 
 		"" 
 	),
+    Array(
+        "Услуги",
+        "/services/",
+        Array(),
+        Array(),
+        ""
+    ),
 	Array(
 		"Портфолио", 
 		"/portfolio/", 

@@ -16,6 +16,14 @@ $curPage = $APPLICATION->GetCurPage(); // Получаем текущий адр
 <link rel="canonical" href="https://<?=$_SERVER['SERVER_NAME'].$APPLICATION->GetCurPage();?>" />
 
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+
+
 
     <?php $APPLICATION->ShowHead() ?>
 
@@ -32,6 +40,7 @@ $curPage = $APPLICATION->GetCurPage(); // Получаем текущий адр
     <link data-n-head="true" rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/favicons/favicon.ico">
     <link data-n-head="true" rel="icon" type="image/png" size="16x16" href="<?=SITE_TEMPLATE_PATH?>/favicons/favicon-16x16.png">
     <link data-n-head="true" rel="icon" type="image/png" size="32x32" href="<?=SITE_TEMPLATE_PATH?>/favicons/favicon-32x32.png">
+
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!-- Yandex.Metrika counter -->
@@ -66,7 +75,7 @@ var yaParams = {ip_adress: "<?php echo $_SERVER['REMOTE_ADDR'];?>"}    //объ�
   gtag('config', 'UA-126962562-1');
 </script>
 
-<?$APPLICATION->IncludeComponent(
+<?/*$APPLICATION->IncludeComponent(
 	"bitrix:breadcrumb", 
 	"universal", 
 	array(
@@ -76,18 +85,26 @@ var yaParams = {ip_adress: "<?php echo $_SERVER['REMOTE_ADDR'];?>"}    //объ�
 		"COMPONENT_TEMPLATE" => "universal"
 	),
 	false
-);?>
+);*/?>
 </head>
 
-<body class="<? $APPLICATION->ShowProperty("page_type") ?>">
+<body cz-shortcut-listen="true" class="no-scroll" <!--class="--><?/* $APPLICATION->ShowProperty("page_type") */?>">
 
 <?php $APPLICATION->ShowPanel() ?>
 
+<header class="header" >
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="/">
+                    <img src="/local/templates/img/logo.png" alt="Logo" title="Logo">
+                </a>
+            </div>
 <? $APPLICATION->IncludeComponent("bitrix:menu", isset($en) ? "menu_en" : "menu", Array(
     "ALLOW_MULTI_SELECT" => "N",    // Разрешить несколько активных пунктов одновременно
     "CHILD_MENU_TYPE" => "left",    // Тип меню для остальных уровней
     "DELAY" => "N",    // Откладывать выполнение шаблона меню
-    "MAX_LEVEL" => "1",    // Уровень вложенности меню
+    "MAX_LEVEL" => "2",    // Уровень вложенности меню
     "MENU_CACHE_GET_VARS" => array(    // Значимые переменные запроса
         0 => "",
     ),
@@ -102,68 +119,66 @@ var yaParams = {ip_adress: "<?php echo $_SERVER['REMOTE_ADDR'];?>"}    //объ�
 
 
 ?>
-
-<?
-
+<?php
 if (isset($en)) {
-    ?>
+?>
+            <div class="header-buttons">
+                <div class="switch-language">
+                    <a href="/" >
+                    RU
+                    </a>
+                    <a href="/en" class="active">
+                        EN
+                    </a>
+                </div>
+                <div class="header-order-button" >
+                    <button  type="button">
+                        <a href="https://goo.gl/forms/OL0Vly25o5OfWMng" class="header__button modal-btn"  id="briefBtn">Fill in the brief</a>
+                    </button>
+                </div>
 
-    <header class="header" role="banner">
-        <div class="header__inner">
-            <a href="/en/" class="header__logo"></a>
-            <div class="header__items">
-                <ul style="font-size: 12px">
-                    <li><a style="color: #fff;" href="/">RU</a></li>
-                    <li style="color: #4d4d4d;">EN</li>
-                </ul>
-                <!-- <a href="https://goo.gl/forms/OL0Vly25o5OfWMng2" onclick="ym(50774233, 'reachGoal', 'ON_CLICK_BRIF'); return true;" target="_blank" class="header__button button">
-                    <span class="button__text">Fill in the brif</span>
-                </a> -->
-                <a href="https://goo.gl/forms/OL0Vly25o5OfWMng2" class="header__button button modal-btn" id="briefBtn">
-                    <span class="button__text">Fill in the brief</span>
-                </a>
-                <button type="button" class="hamburger" data-menu-mobile>
-                    <span class="hamburger__line"></span>
-                    <span class="hamburger__line"></span>
-                    <span class="hamburger__line"></span>
-                </button>
+                <div class="burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
 
-        </div>
-    </header>
 
-    <?
+
+<?php
 } else {
     ?>
+                <div class="header-buttons">
+                    <div class="switch-language">
+                        <a href="/" class="active">
+                            RU
+                        </a>
+                        <a href="/en" >
+                            EN
+                        </a>
+                    </div>
+                    <div class="header-order-button" >
+                        <button  type="button">
+                            <a href="https://goo.gl/forms/OL0Vly25o5OfWMng" class="header__button modal-btn"  id="briefBtn">Заполнить бриф</a>
+                        </button>
+                    </div>
 
-    <header class="header" role="banner">
-        <div class="header__inner">
-            <a href="/" class="header__logo"></a>
-            <div class="header__items">
-                <ul style="font-size: 12px">
-                    <li style="color: #4d4d4d;">RU</li>
-                    <li><a style="color: #fff;" href="/en">EN</a></li>
-                </ul>
-                <!-- <a href="https://goo.gl/forms/OL0Vly25o5OfWMng2" onclick="ym(50774233, 'reachGoal', 'ON_CLICK_BRIF'); return true;" target="_blank" class="header__button button">
-                    <span class="button__text">Заполнить бриф</span>
-                </a> -->
-                <a href="https://goo.gl/forms/OL0Vly25o5OfWMng2" class="header__button button modal-btn" id="briefBtn">
-                    <span class="button__text">Заполнить бриф</span>
-                </a>
-                <button type="button" class="hamburger" data-menu-mobile>
-                    <span class="hamburger__line"></span>
-                    <span class="hamburger__line"></span>
-                    <span class="hamburger__line"></span>
-                </button>
-            </div>
-        </div>
-    </header>
+                    <div class="burger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
 
-    <?
+                </div>
+<?php
 }
 
 ?>
 
+
+    </div>
+</header>
 
 
 <main class="main" role="main">
